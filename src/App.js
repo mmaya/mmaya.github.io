@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 //@material-ui
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
 import Fade from '@material-ui/core/Fade';
 import Grid from '@material-ui/core/Grid';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -84,12 +84,12 @@ function App() {
   <AppDataContext.Provider value={{setNotificacao, setIsLoading}}>
     <div className={classes.root}>
       <Router >
-        <Header />
+        <Hidden smDown implementation="css"><Header /></Hidden>
         {notificacao.texto && <MuiAlert elevation={6} variant="filled" onClose={handleClose} severity={notificacao.tipo || "info"}>{notificacao.texto}</MuiAlert>}
         {rotas}
       </Router>
       <Footer />
-  </div>  }
+  </div>
     </AppDataContext.Provider>
 
 </div>

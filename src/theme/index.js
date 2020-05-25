@@ -1,10 +1,10 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
 const palette = {
-    primary: { main: '#0067a0' },
-    secondary: { main: '#007B5F' }
-  };
-const themeName = 'JT';
+  primary: { main: '#BDC4E4' },
+  secondary: { main: '#12022A' }
+};
+const themeName = 'Milleni';
 
 let theme =  createMuiTheme({ palette, themeName });
 

@@ -1,3 +1,5 @@
+/* src/ui/theme/theme.json */
+
 {
   "breakpoints": {
     "keys": ["xs", "sm", "md", "lg", "xl"],
@@ -186,9 +188,9 @@
     },
     "divider": "rgba(0, 0, 0, 0.12)",
     "secondary": {
-      "main": "#007B5F",
-      "light": "rgb(51, 149, 127)",
-      "dark": "rgb(0, 86, 66)",
+      "main": "#12022A",
+      "light": "rgb(65, 52, 84)",
+      "dark": "rgb(12, 1, 29)",
       "contrastText": "#fff"
     },
     "common": { "black": "#000", "white": "#fff" },
@@ -208,11 +210,11 @@
       "active": "rgba(0, 0, 0, 0.54)"
     },
     "primary": {
-      "main": "#0067a0",
-      "light": "rgb(51, 133, 179)",
-      "dark": "rgb(0, 72, 112)",
-      "contrastText": "#fff"
+      "main": "#BDC4E4",
+      "light": "rgb(202, 207, 233)",
+      "dark": "rgb(132, 137, 159)",
+      "contrastText": "rgba(0, 0, 0, 0.87)"
     }
   },
-  "themeName": "JT"
+  "themeName": "Milleni"
 }
