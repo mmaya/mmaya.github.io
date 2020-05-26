@@ -3,14 +3,11 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Hidden from '@material-ui/core/Hidden';
-import Fade from '@material-ui/core/Fade';
-import Grid from '@material-ui/core/Grid';
 import MuiAlert from '@material-ui/lab/Alert';
 import Backdrop from '@material-ui/core/Backdrop';
-import Button from '@material-ui/core/Button';
 //Layout components
 import Header from 'components/layout/Header/Header';
-import Footer from 'components/layout/Footer/Footer';
+import BottomNav from 'components/layout/BottomNav/BottomNav';
 //Rotes components
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from 'views/HomePage';
@@ -21,12 +18,6 @@ import ContactPage from 'views/ContactPage';
 export const AppDataContext = React.createContext([{}, () => {}]);
 
 const useStyles = makeStyles(theme => ({
-  root: {
-     height: "100%",
-  },
-  container:{
-    margin: theme.spacing(2)
-  },
   mensagem: {
     margin: theme.spacing(10),
   },
@@ -65,7 +56,7 @@ function App() {
   );
 
   const rotas = useMemo(() => (
-    <div className={classes.container}>
+    <div >
       <Switch>
         <Route path="/" exact component={() => <HomePage />} />
         <Route path="/about" component={() => <AboutPage />} />
@@ -76,7 +67,7 @@ function App() {
     ),[classes]);
 
   return (
-    <div className={classes.container}>
+    <div >
 
     <Backdrop className={classes.backdrop} open={isLoading} >
       <CircularProgress color="inherit" />
@@ -87,8 +78,8 @@ function App() {
         <Hidden smDown implementation="css"><Header /></Hidden>
         {notificacao.texto && <MuiAlert elevation={6} variant="filled" onClose={handleClose} severity={notificacao.tipo || "info"}>{notificacao.texto}</MuiAlert>}
         {rotas}
+        <Hidden smUp implementation="css"><BottomNav /></Hidden>
       </Router>
-      <Footer />
   </div>
     </AppDataContext.Provider>
 
