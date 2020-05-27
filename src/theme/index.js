@@ -1,12 +1,17 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import 'typeface-ubuntu';
+import 'typeface-advent-pro';
 
-const palette = {
-  primary: { main: '#BDC4E4' },
-  secondary: { main: '#12022A' }
-};
-const themeName = 'Milleni';
+let theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Advent Pro, Arial',
+  },
+  palette: {
+      primary: { main: '#BDC4E4' },
+      secondary: { main: '#12022A' },
+    }
+});
 
-let theme =  createMuiTheme({ palette, themeName });
 
 theme = responsiveFontSizes(theme);
 

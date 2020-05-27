@@ -10417,6 +10417,16 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-advent-pro@^0.0.69:
+  version "0.0.69"
+  resolved "https://registry.yarnpkg.com/typeface-advent-pro/-/typeface-advent-pro-0.0.69.tgz#6304f187ecc87dc123a09c2b73832e1bc27f5704"
+  integrity sha512-oBxu/c5EIqbqLI01S1R9CJz6djfkDDrS2vDkdxy5/FETzFKAFrrjfabmx+AoOtCOP5ke2+d2S6hRpVyWryYlQg==
+
+typeface-ubuntu@^0.0.65:
+  version "0.0.65"
+  resolved "https://registry.yarnpkg.com/typeface-ubuntu/-/typeface-ubuntu-0.0.65.tgz#d2994cc4b1540ed4830cef7aae2a8c393c197a74"
+  integrity sha512-v+s/216IINmqQoO3Y9+bKDn9OgrasPtRLWaVSmjRBljFDkFndmQjHcsLZrv0r89aSeqzxlBvKwZIigFh8pZO9Q==
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"

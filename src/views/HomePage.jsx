@@ -3,58 +3,101 @@ import logo from 'views/portfolio.png';
 //@material-ui
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from '@material-ui/core/Typography';
-import Parallax from 'components/Parallax';
+import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import AboutPage from 'views/AboutPage';
 import ProjectsPage from 'views/ProjectsPage';
 import ContactPage from 'views/ContactPage';
+//Components
+import Parallax from 'components/Parallax';
+import 'typeface-ubuntu';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    paddingBottom: theme.spacing(10),
+  },
   container: {
     zIndex: "1100",
     width: "100%",
-  },
- image: {
-    width: "100%",
-    height: "auto",
-    padding: theme.spacing(3),
+    paddingLeft: theme.spacing(5),
+    fontFamily: 'Ubuntu, Arial',
+    color: theme.palette.secondary.main,
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing(10),
+      paddingTop: theme.spacing(35),
+    },
   },
   main: {
     position: "relative",
     zIndex: "3"
-  }
+  },
+  button:{
+    fontFamily: 'Ubuntu, Arial',
+    borderRadius: 0,
+    border: "3px solid",
+    marginTop: theme.spacing(2),
+    textTransform: "none",
+    fontSize: "1rem",
+    [theme.breakpoints.up('lg')]: {
+      fontSize: "2rem",
+    },
+  },
+  homeTitle: {
+    fontWeight: 800,
+    lineHeight: 1,
+    fontSize: "4rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "8rem",
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: "12rem",
+    },
+  },
+  homeSubTitle: {
+    fontWeight: 500,
+    fontSize: "2rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "3rem",
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: "6rem",
+    },
+  },
+  homeDescription: {
+    fontWeight: 500,
+    textTransform: "uppercase",
+    maxWidth: "60%",
+    fontSize: "1rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "2rem",
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: "4rem",
+    },
+  },
 }));
 
 function HomePage() {
   const classes = useStyles();
-  const imageRef = React.useRef(logo)
   
     return (
-      <div>
+      <div className={classes.root}>
         
         <Parallax image={require("views/portfolio.png")} >
-        	<div className={classes.container}>
+          <div className={classes.container}>
              <Grid
                   container
-                  direction="row"
-                  justify="center"
-                  alignItems="center"
+                  direction="column"
+                  justify="left"
+                  alignItems="botton"
 
                 >
-              <Grid item xs={1} sm={1} md={2} lg={2} xl={3}  >
-              </Grid>
-              <Grid item xs={10} sm={10} md={8} lg={8} xl={6}  >
-                <Grid container justify="center" >
-                  <Grid item xs={5} sm={5} md={2} lg={2} xl={3}>
-                    <Typography>Milleni Maya</Typography>
-                  </Grid>
-                </Grid>
-                <Typography>Full-stack web developer</Typography>
-              </Grid>
-              <Grid item xs={1} sm={1} md={2} lg={2} xl={3}  >
-              </Grid>
+                  <Grid item><div className={classes.homeTitle}>Milleni Maya</div></Grid>
+                  <Grid item><div className={classes.homeSubTitle}>full-stack web developer</div></Grid>
+                  <Grid item><div className={classes.homeDescription}>elegant, functional and scalable solutions</div></Grid>
+                  <Grid item><Button variant="outlined" color="secondary" size="large" classes={{root: classes.button}}>view more</Button></Grid>
             </Grid>
-		      </div>
+            </div>
         </Parallax>
         <AboutPage />
         <ProjectsPage />

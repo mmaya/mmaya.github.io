@@ -9,7 +9,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
-import theme from 'theme';
+
 
 const useStyles = makeStyles((theme) => ({
   button: {

@@ -16,6 +16,8 @@
     "react-scripts": "3.4.1",
     "react-table": "7.0.0-beta.12",
     "react-text-mask": "^5.4.3",
+    "typeface-advent-pro": "^0.0.69",
+    "typeface-ubuntu": "^0.0.65",
     "yup": "^0.29.0"
   },
   "scripts": {
