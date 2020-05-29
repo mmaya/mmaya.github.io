@@ -11,14 +11,15 @@ const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:"#fff",
     paddingTop: theme.spacing(5),
-    height: theme.spacing(70),
+    minHeight: theme.spacing(70),
   },
   skills:{
     width: '70%',
     margin: "auto",
   },
   progress:{
-    height: "20px",
+    height: "30px",
+    color: theme.palette.secondary.contrastText,
   }
 }));
 
@@ -31,15 +32,12 @@ function LinearProgressWithLabel(props) {
           </Box>
       </Grid>
       <Grid item xs={12} lg={6}>
-        <Box alignItems="center" p={1} my={0.5}>
-          <LinearProgress variant="determinate" color="secondary" {...props} />
-        </Box>
-      </Grid>
-      <Grid item xs>
-        <Box>
-          <Typography variant="body2" color="textSecondary"  align="left">{`${Math.round(
-            props.value,
-          )}%`}</Typography>
+        <Box alignItems="center"bgcolor={theme.palette.primary.main} {...props} my={1} mx={1}>
+          <Box width={props.value + "%"} bgcolor={theme.palette.secondary.main} {...props}>
+          <Typography variant="body2"  align="right">{`${Math.round(
+              props.value,
+            )}%`}</Typography>
+          </Box>
         </Box>
       </Grid>
     </Grid>
@@ -76,7 +74,9 @@ export default function AboutPage() {
         <Typography variant="h5" component="h1" align="center" className={classes.aboutTitle} gutterBottom>I’m a technology enthusiast with a solid work experience in design and building web applications. I have serious passion for good coding and creating intuitive user experiences.</Typography>
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item xs={12} lg={8}>
-            {skills.map((skill, item) => <LinearProgressWithLabel value={skill.maxValue < progress ? skill.maxValue : progress} key={item} name={skill.name}  classes={{root: classes.progress}}/>)}
+            {skills.map((skill, item) => (
+                <LinearProgressWithLabel value={skill.maxValue < progress ? skill.maxValue : progress} key={item} name={skill.name}  classes={{root: classes.progress}}/>
+              ))}
           </Grid>
           <Grid item xs>
             <img src={require("views/perfil.png")} />
