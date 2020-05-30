@@ -5,6 +5,9 @@ import 'typeface-advent-pro';
 let theme = createMuiTheme({
   typography: {
     fontFamily: 'Advent Pro, Arial',
+    body2: {
+      fontFamily: "Ubuntu, Arial",
+    }
   },
   palette: {
       primary: { main: '#BDC4E4' },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
@@ -18,22 +18,24 @@ const useStyles = makeStyles(theme => ({
     margin: "auto",
   },
   progress:{
-    height: "30px",
+    height: theme.spacing(3),
     color: theme.palette.secondary.contrastText,
+    transition: "all 5s ease",
   }
 }));
 
 function LinearProgressWithLabel(props) {
+  const media = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Grid container direction="row" justify="center" alignItems="center">
       <Grid item xs>
           <Box >
-            <Typography align="right">{props.name}</Typography>
+            <Typography variant="body2" align={media ? "left" : "right"}>{props.name}</Typography>
           </Box>
       </Grid>
       <Grid item xs={12} lg={6}>
-        <Box alignItems="center"bgcolor={theme.palette.primary.main} {...props} my={1} mx={1}>
-          <Box width={props.value + "%"} bgcolor={theme.palette.secondary.main} {...props}>
+        <Box alignItems="center" bgcolor={theme.palette.primary.main} {...props} my={1} mx={1.5}>
+          <Box width={props.value + "%"} alignItems="center" bgcolor={theme.palette.secondary.main} {...props}>
           <Typography variant="body2"  align="right">{`${Math.round(
               props.value,
             )}%`}</Typography>
@@ -47,26 +49,25 @@ function LinearProgressWithLabel(props) {
 
 export default function AboutPage() {
   const classes = useStyles();
-  const [skills, setSkill] = React.useState([
-                                  {name: "REACT", maxValue: 98, progress: 10},
-                                  {name: "REDUX and REDUX-SAGA", maxValue: 92, progress: 10},
+  const [skills, setSkills] = React.useState([
+                                  {name: "REACT", maxValue: 98, progress: 0},
+                                  {name: "REDUX and REDUX-SAGA", maxValue: 92, progress: 0},
                                   {name: "REACT HOOKS", maxValue: 87, progress: 10},
-                                  {name: "JEST, ENZYME and REDUX-SAGA-PLAN", maxValue: 98, progress: 10},
-                                  {name: "RUBY ON RAILS", maxValue: 83, progress: 10}, 
-                                  {name: "RSPEC", maxValue: 78, progress: 10}, 
-                                  {name: "AGILE PRACTICES", maxValue: 73, progress: 10}, 
-                                  {name: "UX", maxValue: 69, progress: 10}, 
+                                  {name: "JEST, ENZYME and REDUX-SAGA-PLAN", maxValue: 98, progress: 0},
+                                  {name: "RUBY ON RAILS", maxValue: 83, progress: 0}, 
+                                  {name: "RSPEC", maxValue: 78, progress: 0}, 
+                                  {name: "AGILE PRACTICES", maxValue: 73, progress: 0}, 
+                                  {name: "UX", maxValue: 69, progress: 0}, 
                                 ]);
-  const [progress, setProgress] = React.useState(10);
+  const [progress, setProgress] = React.useState({...skills});
 
   React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? prevProgress : prevProgress + 10));
-    }, 300);
-    return () => {
-      clearInterval(timer);
-    };
+    requestAnimationFrame(() => {
+      setSkills(skills.map(skill => ({...skill, progress: skill.maxValue})))
+    });
   }, []);
+
+  console.log('about')
 
   return (
     <div className={classes.root}>
@@ -75,7 +76,7 @@ export default function AboutPage() {
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item xs={12} lg={8}>
             {skills.map((skill, item) => (
-                <LinearProgressWithLabel value={skill.maxValue < progress ? skill.maxValue : progress} key={item} name={skill.name}  classes={{root: classes.progress}}/>
+                <LinearProgressWithLabel value={skill.progress} key={item} name={skill.name}  classes={{root: classes.progress}}/>
               ))}
           </Grid>
           <Grid item xs>

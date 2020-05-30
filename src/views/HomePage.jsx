@@ -1,19 +1,15 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
-import styled from "styled-components";
+import React from "react";
 //@material-ui
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import Typography from '@material-ui/core/Typography';
 import Slide from '@material-ui/core/Slide';
-import Fade from '@material-ui/core/Fade';
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import AboutPage from 'views/AboutPage';
 import ProjectsPage from 'views/ProjectsPage';
 import ContactPage from 'views/ContactPage';
 //Components
 import Parallax from 'components/Parallax';
-import 'typeface-ubuntu';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -82,27 +78,13 @@ const useStyles = makeStyles(theme => ({
 
 function HomePage() {
   const classes = useStyles();
-  const [show, doShow] = useState({
-    itemOne: false,
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
   });
-  const ourRef = useRef(null);
-
-  useLayoutEffect(() => {
-    const topPos = element => element.getBoundingClientRect().top;
-    const div1Pos = topPos(ourRef.current);
-
-    const onScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight;
-      if (div1Pos < scrollPos) {
-        doShow(state => ({ ...state, itemOne: true }));
-      } 
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
 
+  console.log('home page')
     return (
       <div className={classes.root}>
         <Parallax image={require("views/portfolio.png")} >
@@ -115,9 +97,7 @@ function HomePage() {
               </div>
           </Slide>
         </Parallax>
-          <div  ref={ourRef}>
-            {show.itemOne && <AboutPage />}
-          </div>
+            {trigger && <AboutPage />}
             <ProjectsPage />
             <ContactPage />
       </div>
