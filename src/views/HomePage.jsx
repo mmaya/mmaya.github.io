@@ -2,6 +2,7 @@ import React from "react";
 //@material-ui
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Slide from '@material-ui/core/Slide';
+import Fade from '@material-ui/core/Fade';
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Button from '@material-ui/core/Button';
 import AboutPage from 'views/AboutPage';
@@ -97,9 +98,13 @@ function HomePage() {
               </div>
           </Slide>
         </Parallax>
-            {trigger && <AboutPage />}
-            <ProjectsPage />
-            <ContactPage />
+            <Fade in={trigger} timeout={1000} mountOnEnter>
+              <div>
+                <AboutPage />
+                <ProjectsPage />
+                <ContactPage />
+              </div>
+            </Fade>
       </div>
     );
   }

@@ -59,7 +59,6 @@ export default function AboutPage() {
                                   {name: "AGILE PRACTICES", maxValue: 73, progress: 0}, 
                                   {name: "UX", maxValue: 69, progress: 0}, 
                                 ]);
-  const [progress, setProgress] = React.useState({...skills});
 
   React.useEffect(() => {
     requestAnimationFrame(() => {
@@ -80,7 +79,7 @@ export default function AboutPage() {
               ))}
           </Grid>
           <Grid item xs>
-            <img src={require("views/perfil.png")} />
+            <img src={require("views/perfil.png")}alt="Milleni's smiling face" />
           </Grid>
         </Grid>
       </div>

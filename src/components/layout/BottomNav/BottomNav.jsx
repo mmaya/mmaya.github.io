@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
 import Fab from '@material-ui/core/Fab';
 import Button from '@material-ui/core/Button';
 
@@ -29,7 +26,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function BottomNav() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
 
   return (
   <div className={classes.sectionMobile}>
