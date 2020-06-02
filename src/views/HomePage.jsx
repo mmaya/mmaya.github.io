@@ -2,8 +2,6 @@ import React from "react";
 //@material-ui
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Slide from '@material-ui/core/Slide';
-import Fade from '@material-ui/core/Fade';
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Button from '@material-ui/core/Button';
 import AboutPage from 'views/AboutPage';
 import ProjectsPage from 'views/ProjectsPage';
@@ -81,12 +79,9 @@ const useStyles = makeStyles(theme => ({
 function HomePage() {
   const classes = useStyles();
   const [trigger, setTrigger] = React.useState(false)
-  let prevRatio = 0.0;
 
   window.addEventListener("load", (event) => {
     let boxElement = document.getElementById("sections");
-
-  
     createObserver(boxElement);
   }, false);
 
@@ -105,7 +100,7 @@ function HomePage() {
     let observer;
   
     let options = {
-      root: null,  // use the viewport
+      root: null,
       rootMargin: '0px',
       threshold: 0.1
     };
@@ -114,7 +109,6 @@ function HomePage() {
     observer.observe(boxElement);
   }
 
-  
     return (
       <div className={classes.root} id="root">
         <Parallax image={require("views/portfolio.png")} >
@@ -128,13 +122,9 @@ function HomePage() {
           </Slide>
         </Parallax>
         <div id="sections">
-            
-              <div>
-                <AboutPage trigger={trigger}/>
-                <ProjectsPage />
-                <ContactPage />
-              </div>
-            
+          <AboutPage trigger={trigger}/>
+          <ProjectsPage />
+          <ContactPage />
         </div>
       </div>
     );

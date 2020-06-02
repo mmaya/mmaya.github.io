@@ -61,13 +61,24 @@ export default function AboutPage({...props}) {
                                   {name: "UX", maxValue: 69, progress: 10}, 
                                 ]);
 
+  
+  const progress = React.useCallback(
+    () => {
+      setSkills(skills.map(skill => ({...skill, progress: skill.maxValue})))
+    },
+    [skills],
+  );
+  
   React.useEffect(() => {
     if(trigger){
       requestAnimationFrame(() => {
-        setSkills(skills.map(skill => ({...skill, progress: skill.maxValue})))
+        progress()
       });
     }
-  }, [trigger]);
+  }, [trigger, progress]);
+
+
+  
 
 
   return (
