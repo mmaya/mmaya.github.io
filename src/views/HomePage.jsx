@@ -77,20 +77,49 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
 function HomePage() {
   const classes = useStyles();
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
+  const [trigger, setTrigger] = React.useState(false)
+  let prevRatio = 0.0;
 
+  window.addEventListener("load", (event) => {
+    let boxElement = document.getElementById("sections");
 
-  console.log('home page')
+  
+    createObserver(boxElement);
+  }, false);
+
+ 
+
+  function handleIntersect(entries, observer) {
+    entries.forEach(entry => {
+      console.log(entry.intersectionRatio)
+      if (entry.intersectionRatio > 0.1) {
+        setTrigger(true)
+      } 
+    });
+  }
+
+  function createObserver(boxElement) {
+    let observer;
+  
+    let options = {
+      root: null,  // use the viewport
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+  
+    observer = new IntersectionObserver(handleIntersect, options);
+    observer.observe(boxElement);
+  }
+
+  
     return (
-      <div className={classes.root}>
+      <div className={classes.root} id="root">
         <Parallax image={require("views/portfolio.png")} >
           <Slide direction="right" in={true}  timeout={1500} mountOnEnter>
-              <div className={classes.container}>
+              <div className={classes.container} >
                     <div className={classes.homeTitle}>Milleni Maya</div>
                     <div className={classes.homeSubTitle}>full-stack web developer</div>
                     <div className={classes.homeDescription}>elegant, functional and scalable solutions</div>
@@ -98,13 +127,15 @@ function HomePage() {
               </div>
           </Slide>
         </Parallax>
-            <Fade in={trigger} timeout={1000} mountOnEnter>
+        <div id="sections">
+            
               <div>
-                <AboutPage />
+                <AboutPage trigger={trigger}/>
                 <ProjectsPage />
                 <ContactPage />
               </div>
-            </Fade>
+            
+        </div>
       </div>
     );
   }

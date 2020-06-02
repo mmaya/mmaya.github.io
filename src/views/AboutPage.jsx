@@ -47,26 +47,28 @@ function LinearProgressWithLabel(props) {
 }
 
 
-export default function AboutPage() {
+export default function AboutPage({...props}) {
   const classes = useStyles();
+  const trigger = props.trigger;
   const [skills, setSkills] = React.useState([
-                                  {name: "REACT", maxValue: 98, progress: 0},
-                                  {name: "REDUX and REDUX-SAGA", maxValue: 92, progress: 0},
+                                  {name: "REACT", maxValue: 98, progress: 10},
+                                  {name: "REDUX and REDUX-SAGA", maxValue: 95, progress: 10},
+                                  {name: "JEST, ENZYME and REDUX-SAGA-PLAN", maxValue: 93, progress: 10},
                                   {name: "REACT HOOKS", maxValue: 87, progress: 10},
-                                  {name: "JEST, ENZYME and REDUX-SAGA-PLAN", maxValue: 98, progress: 0},
-                                  {name: "RUBY ON RAILS", maxValue: 83, progress: 0}, 
-                                  {name: "RSPEC", maxValue: 78, progress: 0}, 
-                                  {name: "AGILE PRACTICES", maxValue: 73, progress: 0}, 
-                                  {name: "UX", maxValue: 69, progress: 0}, 
+                                  {name: "RUBY ON RAILS", maxValue: 83, progress: 10}, 
+                                  {name: "RSPEC", maxValue: 78, progress: 10}, 
+                                  {name: "AGILE PRACTICES", maxValue: 76, progress: 10}, 
+                                  {name: "UX", maxValue: 69, progress: 10}, 
                                 ]);
 
   React.useEffect(() => {
-    requestAnimationFrame(() => {
-      setSkills(skills.map(skill => ({...skill, progress: skill.maxValue})))
-    });
-  }, []);
+    if(trigger){
+      requestAnimationFrame(() => {
+        setSkills(skills.map(skill => ({...skill, progress: skill.maxValue})))
+      });
+    }
+  }, [trigger]);
 
-  console.log('about')
 
   return (
     <div className={classes.root}>
