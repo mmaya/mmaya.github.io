@@ -81,22 +81,21 @@ function HomePage() {
   const [trigger, setTrigger] = React.useState(false)
 
   window.addEventListener("load", (event) => {
-    let boxElement = document.getElementById("sections");
-    createObserver(boxElement);
+    let sectionsDiv = document.getElementById("sections");
+    createObserver(sectionsDiv);
   }, false);
 
  
 
   function handleIntersect(entries, observer) {
     entries.forEach(entry => {
-      console.log(entry.intersectionRatio)
       if (entry.intersectionRatio > 0.1) {
         setTrigger(true)
       } 
     });
   }
 
-  function createObserver(boxElement) {
+  function createObserver(sectionsDiv) {
     let observer;
   
     let options = {
@@ -106,7 +105,7 @@ function HomePage() {
     };
   
     observer = new IntersectionObserver(handleIntersect, options);
-    observer.observe(boxElement);
+    observer.observe(sectionsDiv);
   }
 
     return (
