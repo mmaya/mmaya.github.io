@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/my-portfolio/static/js/main.1f3ae64e.chunk.js",
+    "main.js.map": "/my-portfolio/static/js/main.1f3ae64e.chunk.js.map",
+    "runtime-main.js": "/my-portfolio/static/js/runtime-main.00bba678.js",
+    "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.00bba678.js.map",
+    "static/css/2.4bfc5d82.chunk.css": "/my-portfolio/static/css/2.4bfc5d82.chunk.css",
+    "static/js/2.cdb2529c.chunk.js": "/my-portfolio/static/js/2.cdb2529c.chunk.js",
+    "static/js/2.cdb2529c.chunk.js.map": "/my-portfolio/static/js/2.cdb2529c.chunk.js.map",
+    "index.html": "/my-portfolio/index.html",
+    "precache-manifest.9708ac37d0b0d83e512f55475d87634a.js": "/my-portfolio/precache-manifest.9708ac37d0b0d83e512f55475d87634a.js",
+    "service-worker.js": "/my-portfolio/service-worker.js",
+    "static/css/2.4bfc5d82.chunk.css.map": "/my-portfolio/static/css/2.4bfc5d82.chunk.css.map",
+    "static/js/2.cdb2529c.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.cdb2529c.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/my-portfolio/static/media/ubuntu-latin-700italic.c02fdf85.woff2",
+    "static/media/home-cover.png": "/my-portfolio/static/media/home-cover.1a0887cc.png",
+    "static/media/perfil.png": "/my-portfolio/static/media/perfil.f0815ebf.png",
+    "static/media/portfolio.png": "/my-portfolio/static/media/portfolio.45ad0dd6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00bba678.js",
+    "static/css/2.4bfc5d82.chunk.css",
+    "static/js/2.cdb2529c.chunk.js",
+    "static/js/main.1f3ae64e.chunk.js"
+  ]
+}
