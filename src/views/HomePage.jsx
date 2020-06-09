@@ -8,6 +8,7 @@ import ProjectsPage from 'views/ProjectsPage';
 import ContactPage from 'views/ContactPage';
 //Components
 import Parallax from 'components/Parallax';
+import { useLocation } from "react-router-dom";
 
 
 const useStyles = makeStyles(theme => ({
@@ -39,6 +40,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('lg')]: {
       fontSize: "2rem",
     },
+    '&:hover': {
+      borderRadius: 0,
+      border: "3px solid",
+      textTransform: "uppercase",
+    }
   },
   homeTitle: {
     fontWeight: 800,
@@ -79,10 +85,16 @@ const useStyles = makeStyles(theme => ({
 function HomePage() {
   const classes = useStyles();
   const [trigger, setTrigger] = React.useState(false)
+  const { hash } = useLocation();
+  const sections = React.createRef();
+  const about = React.createRef();
+  const projects = React.createRef();
+  const contact = React.createRef();
+  const sectionsRefs = [about, projects, contact]
+
 
   window.addEventListener("load", (event) => {
-    let sectionsDiv = document.getElementById("sections");
-    createObserver(sectionsDiv);
+    createObserver(sections.current);
   }, false);
 
  
@@ -108,6 +120,28 @@ function HomePage() {
     observer.observe(sectionsDiv);
   }
 
+  const findSection = React.useCallback(
+    (id) => {
+      return sectionsRefs.find(element => element.current.id = id);
+    },
+    [sectionsRefs],
+  );
+
+  React.useEffect(() => {
+    if(hash){
+      const section = findSection(hash.substring(1));
+      section.current.scrollIntoView({behavior: "smooth"})
+    }else{
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  }, [hash, findSection]);
+  
+  
+
     return (
       <div className={classes.root} id="root">
         <Parallax image={require("views/portfolio.png")} >
@@ -120,10 +154,10 @@ function HomePage() {
               </div>
           </Slide>
         </Parallax>
-        <div id="sections">
-          <AboutPage trigger={trigger}/>
-          <ProjectsPage />
-          <ContactPage />
+        <div ref={sections}>
+          <div ref={about}><AboutPage trigger={trigger} /></div>
+          <div ref={projects}> <ProjectsPage /></div>
+          <div ref={contact}><ContactPage /></div>
         </div>
       </div>
     );

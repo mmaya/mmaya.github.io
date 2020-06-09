@@ -48,9 +48,7 @@ export default function RecipeReviewCard({...props}) {
   };
 
   return (
-    <Fade in={expanded} timeout="auto" unmountOnExit className={clsx(classes.expand, {
-      [classes.expandOpen]: expanded,
-    })}>
+    <Fade in={expanded} unmountOnExit >
     <Card className={classes.root}>
       <CardHeader
         avatar={
