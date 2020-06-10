@@ -55,7 +55,7 @@ export default function Header({ ...props }) {
               <Button
                 color="inherit"
                 className={classes.button}
-                component={Link} to="/projects"
+                component={Link} to={{pathname: "/my-portfolio", hash: "#projects", scroll: "smoth"}}
                 startIcon={<MenuBookIcon />}
               >
                 Projects
@@ -71,7 +71,7 @@ export default function Header({ ...props }) {
               <Button
                 color="inherit"
                 className={classes.button}
-                component={Link} to="/constact"
+                component={Link} to={{pathname: "/my-portfolio", hash: "#contact", scroll: "smoth"}}
                 startIcon={<MailIcon />}
               >
                 Contact

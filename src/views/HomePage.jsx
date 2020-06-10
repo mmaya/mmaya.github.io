@@ -30,6 +30,13 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     zIndex: "3"
   },
+  sections:{
+    [theme.breakpoints.up('sm')]: {
+      scrollMarginTop: "40px",
+      scrollSnapMargin: "40px",
+    },
+    display: "block",
+  },
   button:{
     fontFamily: 'Ubuntu, Arial',
     borderRadius: 0,
@@ -90,7 +97,6 @@ function HomePage() {
   const about = React.createRef();
   const projects = React.createRef();
   const contact = React.createRef();
-  const sectionsRefs = [about, projects, contact]
 
 
   window.addEventListener("load", (event) => {
@@ -120,25 +126,27 @@ function HomePage() {
     observer.observe(sectionsDiv);
   }
 
-  const findSection = React.useCallback(
-    (id) => {
-      return sectionsRefs.find(element => element.current.id = id);
-    },
-    [sectionsRefs],
-  );
 
   React.useEffect(() => {
-    if(hash){
-      const section = findSection(hash.substring(1));
-      section.current.scrollIntoView({behavior: "smooth"})
-    }else{
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-  }, [hash, findSection]);
+      switch (hash.substring(1)) {
+        case 'about':
+          about.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+          break;
+        case 'projects':
+          projects.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+          break;
+        case 'contact':
+          console.log("entrou contact")
+          contact.current.scrollIntoView({ behavior: 'smooth'});
+          break;
+        default:
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+      }
+  }, [hash]);
   
   
 
@@ -155,9 +163,9 @@ function HomePage() {
           </Slide>
         </Parallax>
         <div ref={sections}>
-          <div ref={about}><AboutPage trigger={trigger} /></div>
-          <div ref={projects}> <ProjectsPage /></div>
-          <div ref={contact}><ContactPage /></div>
+          <div ref={about} className={classes.sections}><AboutPage trigger={trigger} /></div>
+          <div ref={projects} className={classes.sections}> <ProjectsPage /></div>
+          <div ref={contact} className={classes.sections}><ContactPage /></div>
         </div>
       </div>
     );

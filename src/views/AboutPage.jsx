@@ -10,17 +10,25 @@ import theme from 'theme';
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:"#fff",
-    paddingTop: theme.spacing(5),
-    minHeight: theme.spacing(70),
+    padding: theme.spacing(15, 2, 15, 2),
+    minHeight: "calc(100vw * (6/16))",
+    alignItems: "center",
   },
-  skills:{
-    width: '70%',
+  content:{
+    width: '90%',
     margin: "auto",
   },
+  skills:{
+    paddingTop: theme.spacing(5),
+  },
   progress:{
-    height: theme.spacing(3),
+    height: theme.spacing(4),
     color: theme.palette.secondary.contrastText,
     transition: "all 5s ease",
+  },
+  image:{
+    width: "80%",
+    height: "auto",
   }
 }));
 
@@ -30,13 +38,13 @@ function LinearProgressWithLabel(props) {
     <Grid container direction="row" justify="center" alignItems="center">
       <Grid item xs>
           <Box >
-            <Typography variant="body2" align={media ? "left" : "right"}>{props.name}</Typography>
+            <Typography variant="body2" align={media ? "left" : "right"} >{props.name}</Typography>
           </Box>
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} lg={8}>
         <Box alignItems="center" bgcolor={theme.palette.primary.main} {...props} my={1} mx={1.5}>
           <Box width={props.value + "%"} alignItems="center" bgcolor={theme.palette.secondary.main} {...props}>
-          <Typography variant="body2"  align="right">{`${Math.round(
+          <Typography variant="body2"  align="right" >{`${Math.round(
               props.value,
             )}%`}</Typography>
           </Box>
@@ -69,12 +77,17 @@ export default function AboutPage({...props}) {
     [skills],
   );
   
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if(trigger){
       requestAnimationFrame(() => {
         progress()
       });
     }
+    return () => {
+      cancelAnimationFrame(() => {
+        progress()
+      });
+    };
   }, [trigger, progress]);
 
 
@@ -83,18 +96,21 @@ export default function AboutPage({...props}) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.skills}>
-        <Typography variant="h5" component="h1" align="center" className={classes.aboutTitle} gutterBottom>I’m a technology enthusiast with a solid work experience in design and building web applications. I have serious passion for good coding and creating intuitive user experiences.</Typography>
-        <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item xs={12} lg={8}>
-            {skills.map((skill, item) => (
-                <LinearProgressWithLabel value={skill.progress} key={item} name={skill.name}  classes={{root: classes.progress}}/>
-              ))}
+      <div className={classes.content}>
+        <Typography variant="h4" component="h1" align="center" className={classes.aboutTitle} >I’m a technology enthusiast with a solid work experience in design and building web applications. I have a serious passion for good coding and creating intuitive user experiences.</Typography>
+        
+        <div className={classes.skills}>
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item xs={12} lg={8}>
+              {skills.map((skill, item) => (
+                  <LinearProgressWithLabel value={skill.progress} key={item} name={skill.name}  classes={{root: classes.progress}}/>
+                ))}
+            </Grid>
+            <Grid item xs>
+              <img src={require("views/perfil.png")}alt="Milleni's smiling face" className={classes.image}/>
+            </Grid>
           </Grid>
-          <Grid item xs>
-            <img src={require("views/perfil.png")}alt="Milleni's smiling face" />
-          </Grid>
-        </Grid>
+          </div>
       </div>
     </div>
   );

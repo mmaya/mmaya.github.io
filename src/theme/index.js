@@ -7,6 +7,7 @@ let theme = createMuiTheme({
     fontFamily: 'Advent Pro, Arial',
     body2: {
       fontFamily: "Ubuntu, Arial",
+      fontSize: "1.3rem"
     }
   },
   palette: {
