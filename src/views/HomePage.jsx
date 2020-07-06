@@ -3,19 +3,19 @@ import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Slide from '@material-ui/core/Slide';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
+//Components
+import Parallax from 'components/Parallax';
 import AboutPage from 'views/AboutPage';
 import ProjectsPage from 'views/ProjectsPage';
 import ContactPage from 'views/ContactPage';
-//Components
-import Parallax from 'components/Parallax';
-import { useLocation } from "react-router-dom";
+
 
 
 const useStyles = makeStyles(theme => ({
   root: {
-    [theme.breakpoints.down('sm')]: {
-      paddingBottom: theme.spacing(10),
-    }
+
   },
   container: {
     zIndex: "1100",
@@ -165,7 +165,12 @@ function HomePage() {
                     <div className={classes.homeTitle}>Milleni Maya</div>
                     <div className={classes.homeSubTitle}>full-stack web developer</div>
                     <div className={classes.homeDescription}>elegant, functional and scalable solutions</div>
-                <Button variant="outlined" color="secondary" size="large" classes={{root: classes.button}}>view more</Button>
+                <Button 
+                  variant="outlined" 
+                  color="secondary" 
+                  size="large" 
+                  classes={{root: classes.button}}
+                  component={Link} to={{pathname: "/my-portfolio", hash: "#projects", scroll: "smoth"}}>view more</Button>
               </div>
           </Slide>
         </Parallax>

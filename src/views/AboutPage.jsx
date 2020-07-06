@@ -10,9 +10,12 @@ import theme from 'theme';
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:"#fff",
-    padding: theme.spacing(15, 2, 15, 2),
+    padding: theme.spacing(5, 2, 5, 2),
     minHeight: "calc(100vw * (6/14))",
     alignItems: "center",
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(15, 2, 15, 2),
+    },
   },
   content:{
     width: '90%',

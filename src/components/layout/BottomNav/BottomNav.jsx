@@ -33,24 +33,24 @@ export default function BottomNav() {
         <Toolbar >
             <Button
               color="inherit"
-              component={Link} to={"/"}
+              component={Link} to="/my-portfolio"
             >
               HomePage
             </Button>
             <Button
               color="inherit"
-              component={Link} to={"/projects"}
+              component={Link} to={{pathname: "/my-portfolio", hash: "#projects", scroll: "smoth"}}
             >
               Projects
             </Button> 
             <Button
               color="inherit"
-              component={Link} to={"/about"}
+              component={Link} to={{pathname: "/my-portfolio", hash: "#about", scroll: "smoth"}}
             >
               About
             </Button> 
             <div className={classes.grow} />
-            <Fab color="secondary" aria-label="add" className={classes.fabButton} component={Link} to={"/contact"}>
+            <Fab color="secondary" aria-label="add" className={classes.fabButton} component={Link} to={{pathname: "/my-portfolio", hash: "#contact", scroll: "smoth"}}>
               <MailIcon />
             </Fab>
             <div className={classes.grow} />

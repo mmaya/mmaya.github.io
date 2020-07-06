@@ -10,9 +10,10 @@ const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:"#fff",
     minHeight: "calc(100vw * (6/14))",
-    paddingTop: theme.spacing(20),
-    paddingRight: theme.spacing(3),
-    paddingLeft: theme.spacing(3),
+    padding: theme.spacing(5, 2, 15, 2),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(20),
+    },
   }
 }));
 
