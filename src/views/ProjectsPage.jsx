@@ -19,7 +19,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: theme.spacing(5),
-    minHeight: theme.spacing(70),
+    minHeight: "calc(100vw * (6/14))",
   },
   content: {
     width: '70%',

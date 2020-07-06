@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:"#fff",
     padding: theme.spacing(15, 2, 15, 2),
-    minHeight: "calc(100vw * (6/16))",
+    minHeight: "calc(100vw * (6/14))",
     alignItems: "center",
   },
   content:{
@@ -27,8 +27,9 @@ const useStyles = makeStyles(theme => ({
     transition: "all 5s ease",
   },
   image:{
-    width: "80%",
+    maxWidth: "100%",
     height: "auto",
+    margin: "auto",
   }
 }));
 
@@ -106,7 +107,7 @@ export default function AboutPage({...props}) {
                   <LinearProgressWithLabel value={skill.progress} key={item} name={skill.name}  classes={{root: classes.progress}}/>
                 ))}
             </Grid>
-            <Grid item xs>
+            <Grid item xs={12} lg={4}>
               <img src={require("views/perfil.png")}alt="Milleni's smiling face" className={classes.image}/>
             </Grid>
           </Grid>

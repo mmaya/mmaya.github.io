@@ -13,7 +13,9 @@ import { useLocation } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingBottom: theme.spacing(10),
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: theme.spacing(10),
+    }
   },
   container: {
     zIndex: "1100",
@@ -126,9 +128,9 @@ function HomePage() {
     observer.observe(sectionsDiv);
   }
 
-
-  React.useEffect(() => {
-      switch (hash.substring(1)) {
+  const section = React.useCallback(
+    (sec) => {
+      switch (sec) {
         case 'about':
           about.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
           break;
@@ -136,7 +138,6 @@ function HomePage() {
           projects.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
           break;
         case 'contact':
-          console.log("entrou contact")
           contact.current.scrollIntoView({ behavior: 'smooth'});
           break;
         default:
@@ -146,7 +147,13 @@ function HomePage() {
             behavior: 'smooth'
           });
       }
-  }, [hash]);
+    },
+    [about, projects, contact],
+  );
+
+  React.useEffect(() => {
+      section(hash.substring(1))
+  }, [hash, section]);
   
   
 

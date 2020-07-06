@@ -2,16 +2,17 @@ import React from "react";
 //@material-ui
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:"#fff",
-    paddingTop: theme.spacing(5),
-    minHeight: theme.spacing(90),
-  },
-  content: {
-    width: '70%',
-    margin: "auto",
+    minHeight: "calc(100vw * (6/14))",
+    paddingTop: theme.spacing(20),
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
   }
 }));
 
@@ -21,7 +22,23 @@ function ContactPage() {
   return (
       <div className={classes.root}>
         <div className={classes.content}>
-        <Typography variant="h3" component="h1" align="center">Let's build something great!</Typography>
+        <Grid
+            container
+            direction="column"
+            justify="space-around"
+            alignItems="center"
+            spacing={3}
+          >
+            <Grid item><Typography variant="h2" component="h1" align="center">Let's build something great!</Typography></Grid>
+            <Grid item>
+              <Button component={Link} href="https://github.com/mmaya" target="_blank"><img src={require("views/github.png")}alt="Github icon" className={classes.image}/></Button>
+              <Button component={Link} href="https://www.linkedin.com/in/milleni-maya/" target="_blank"><img src={require("views/linkedin.png")}alt="Linkedin icon" className={classes.image}/></Button>
+            </Grid>
+            <Grid item>
+                <Typography align="center"><Link href="mailto:millleni.maya@gmail.com" color="secondary" variant="h4">millleni.maya@gmail.com</Link></Typography>
+                <Typography align="center"><Link href="tel:+5521982107677" variant="h4" color="secondary">+55-21-98210-7677</Link></Typography>
+            </Grid>
+          </Grid>
         </div>
       </div>
     );
