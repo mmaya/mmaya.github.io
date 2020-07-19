@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.js": "/static/js/main.41da2447.chunk.js",
-    "main.js.map": "/static/js/main.41da2447.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.555d898a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.555d898a.js.map",
-    "static/css/2.e26fde3e.chunk.css": "/static/css/2.e26fde3e.chunk.css",
-    "static/js/2.9eb6e22b.chunk.js": "/static/js/2.9eb6e22b.chunk.js",
-    "static/js/2.9eb6e22b.chunk.js.map": "/static/js/2.9eb6e22b.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.c0568db0c197b0cf65afe682510c0d85.js": "/precache-manifest.c0568db0c197b0cf65afe682510c0d85.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.e26fde3e.chunk.css.map": "/static/css/2.e26fde3e.chunk.css.map",
-    "static/js/2.9eb6e22b.chunk.js.LICENSE.txt": "/static/js/2.9eb6e22b.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/ubuntu-latin-700italic.c02fdf85.woff2",
-    "static/media/perfil.png": "/static/media/perfil.33802f1e.png",
-    "static/media/portfolio.png": "/static/media/portfolio.45ad0dd6.png"
+    "main.js": "/my-portfolio/static/js/main.e978c7e9.chunk.js",
+    "main.js.map": "/my-portfolio/static/js/main.e978c7e9.chunk.js.map",
+    "runtime-main.js": "/my-portfolio/static/js/runtime-main.00bba678.js",
+    "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.00bba678.js.map",
+    "static/css/2.4bfc5d82.chunk.css": "/my-portfolio/static/css/2.4bfc5d82.chunk.css",
+    "static/js/2.9eb6e22b.chunk.js": "/my-portfolio/static/js/2.9eb6e22b.chunk.js",
+    "static/js/2.9eb6e22b.chunk.js.map": "/my-portfolio/static/js/2.9eb6e22b.chunk.js.map",
+    "index.html": "/my-portfolio/index.html",
+    "precache-manifest.0bcfd9ad21b0ebeb8a1af6b7d6b36d92.js": "/my-portfolio/precache-manifest.0bcfd9ad21b0ebeb8a1af6b7d6b36d92.js",
+    "service-worker.js": "/my-portfolio/service-worker.js",
+    "static/css/2.4bfc5d82.chunk.css.map": "/my-portfolio/static/css/2.4bfc5d82.chunk.css.map",
+    "static/js/2.9eb6e22b.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.9eb6e22b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/my-portfolio/static/media/ubuntu-latin-700italic.c02fdf85.woff2",
+    "static/media/perfil.png": "/my-portfolio/static/media/perfil.33802f1e.png",
+    "static/media/portfolio.png": "/my-portfolio/static/media/portfolio.45ad0dd6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.555d898a.js",
-    "static/css/2.e26fde3e.chunk.css",
+    "static/js/runtime-main.00bba678.js",
+    "static/css/2.4bfc5d82.chunk.css",
     "static/js/2.9eb6e22b.chunk.js",
-    "static/js/main.41da2447.chunk.js"
+    "static/js/main.e978c7e9.chunk.js"
   ]
 }
