@@ -159,7 +159,7 @@ function HomePage() {
 
     return (
       <div className={classes.root} id="root">
-        <Parallax image={require("views/portfolio.png")} >
+        <Parallax image={require("views/images/portfolio.png")} >
           <Slide direction="right" in={true}  timeout={1500} mountOnEnter>
               <div className={classes.container} >
                     <div className={classes.homeTitle}>Milleni Maya</div>

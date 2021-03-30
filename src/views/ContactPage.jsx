@@ -32,8 +32,8 @@ function ContactPage() {
           >
             <Grid item><Typography variant="h2" component="h1" align="center">Let's build something great!</Typography></Grid>
             <Grid item>
-              <Button component={Link} href="https://github.com/mmaya" target="_blank"><img src={require("views/github.png")}alt="Github icon" className={classes.image}/></Button>
-              <Button component={Link} href="https://www.linkedin.com/in/milleni-maya/" target="_blank"><img src={require("views/linkedin.png")}alt="Linkedin icon" className={classes.image}/></Button>
+              <Button component={Link} href="https://github.com/mmaya" target="_blank"><img src={require("views/images/github.png")}alt="Github icon" className={classes.image}/></Button>
+              <Button component={Link} href="https://www.linkedin.com/in/milleni-maya/" target="_blank"><img src={require("views/images/linkedin.png")}alt="Linkedin icon" className={classes.image}/></Button>
             </Grid>
             <Grid item>
                 <Typography align="center"><Link href="mailto:millleni.maya@gmail.com" color="secondary" variant="h4">millleni.maya@gmail.com</Link></Typography>

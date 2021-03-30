@@ -111,7 +111,7 @@ export default function AboutPage({...props}) {
                 ))}
             </Grid>
             <Grid item xs={12} lg={4}>
-              <img src={require("views/perfil.png")}alt="Milleni's smiling face" className={classes.image}/>
+              <img src={require("views/images/perfil.png")}alt="Milleni's smiling face" className={classes.image}/>
             </Grid>
           </Grid>
           </div>
