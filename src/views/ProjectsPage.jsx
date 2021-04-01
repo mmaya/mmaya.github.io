@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import Tooltip from '@material-ui/core/Tooltip';
 //Icons
 import GitHubIcon from '@material-ui/icons/GitHub';
-import PageviewIcon from '@material-ui/icons/Pageview';
+import FindInPageIcon from '@material-ui/icons/FindInPage';
 //Components
 import Card from 'components/ImageCard/ImageCard';
 
@@ -54,22 +54,18 @@ export default function ProjectsPage({...props}) {
                       <Chip
                         label="React"
                         className={classes.chip}
-                        color="primary"
                       />,
                       <Chip
                         label="React Hooks"
                         className={classes.chip}
-                        color="primary"
                       />,
                       <Chip
                         label="CSS"
                         className={classes.chip}
-                        color="primary"
                       />,
                       <Chip
                         label="UX"
                         className={classes.chip}
-                        color="primary"
                       />].map((chip) => chip)}
                   image={require("views/images/portfolio-project.png")}
                   content="Well-organized single page project, developed with React Hooks, hosted on GitHub Pages."
@@ -88,7 +84,7 @@ export default function ProjectsPage({...props}) {
                         component={Link} to="/my-portfolio"
                         color="secondary"
                         size="medium">
-                        <PageviewIcon />
+                        <FindInPageIcon />
                       </IconButton></Tooltip>]
                   }/>
               </Grid>
