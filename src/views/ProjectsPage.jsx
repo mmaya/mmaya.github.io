@@ -3,8 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import Chip from '@material-ui/core/Chip';
+import { Link } from 'react-router-dom'
+import Tooltip from '@material-ui/core/Tooltip';
+//Icons
+import GitHubIcon from '@material-ui/icons/GitHub';
+import PageviewIcon from '@material-ui/icons/Pageview';
+//Components
 import Card from 'components/ImageCard/ImageCard';
 
 
@@ -26,25 +31,9 @@ const useStyles = makeStyles(theme => ({
   group: {
     flexGrow: 1,
   },
-  paper: {
-    maxWidth: 345,
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
+  chip:{
+    fontFamily: 'Ubuntu, Arial',
+    marginRight: theme.spacing(1)
   }
 }));
 
@@ -58,30 +47,51 @@ export default function ProjectsPage({...props}) {
       <Grid container className={classes.goup} spacing={2}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
-          {[0, 1, 2].map((value) => (
-              <Grid key={value} item>
+              <Grid item>
                 <Card
-                  title={`Titulo ${value}`}
-                  subtitle={`Subtitulo ${value}`}
-                  image={require("views/images/portfolio.png")}
-                  content="This impressive paella is a perfect party dish and a fun meal to cook together with your
-                  guests. Add 1 cup of frozen peas along with the mussels, if you like."
-                  fullContent="Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-                  heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-                  browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-                  and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-                  pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-                  saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil."
+                  title="This portfolio"
+                  subtitle={[
+                      <Chip
+                        label="React"
+                        className={classes.chip}
+                        color="primary"
+                      />,
+                      <Chip
+                        label="React Hooks"
+                        className={classes.chip}
+                        color="primary"
+                      />,
+                      <Chip
+                        label="CSS"
+                        className={classes.chip}
+                        color="primary"
+                      />,
+                      <Chip
+                        label="UX"
+                        className={classes.chip}
+                        color="primary"
+                      />].map((chip) => chip)}
+                  image={require("views/images/portfolio-project.png")}
+                  content="Well-organized single page project, developed with React Hooks, hosted on GitHub Pages."
+                  fullContent="Check out the source code for the highlights"
                   buttons={
-                    [<IconButton aria-label="add to favorites">
-                      <FavoriteIcon />
-                    </IconButton>,
-                    <IconButton aria-label="share">
-                      <ShareIcon />
-                    </IconButton>]
+                    [<Tooltip title="Source code">
+                      <IconButton 
+                        aria-label="source coude" 
+                        onClick={() => window.open("https://github.com/mmaya/my-portfolio", "_blank")}
+                        color="secondary"
+                        size="medium">
+                        <GitHubIcon />
+                      </IconButton></Tooltip>,
+                      <Tooltip title="Preview"><IconButton 
+                        aria-label="preview" 
+                        component={Link} to="/my-portfolio"
+                        color="secondary"
+                        size="medium">
+                        <PageviewIcon />
+                      </IconButton></Tooltip>]
                   }/>
               </Grid>
-          ))}
           </Grid>
         </Grid>
       </Grid>
