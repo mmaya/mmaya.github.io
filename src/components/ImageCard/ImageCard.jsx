@@ -72,7 +72,7 @@ export default function ImageCard({...props}) {
           title={imageTitle}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="p" align="justify">
             {content}
           </Typography>
         </CardContent>

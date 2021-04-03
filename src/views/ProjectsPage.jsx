@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   chip:{
     fontFamily: 'Ubuntu, Arial',
     marginRight: theme.spacing(1)
-  }
+  },
 }));
 
 export default function ProjectsPage({...props}) {
@@ -86,6 +86,42 @@ export default function ProjectsPage({...props}) {
                         size="medium">
                         <FindInPageIcon />
                       </IconButton></Tooltip>]
+                  }/>
+              </Grid>
+              <Grid item>
+                <Card
+                  title="Books API"
+                  subtitle={[<Chip
+                              label="Ruby on Rails"
+                              className={classes.chip}
+                            />,
+                            <Chip
+                              label="API"
+                              className={classes.chip}
+                            />,
+                            <Chip
+                            label="AWS S3"
+                            className={classes.chip}
+                          />].map((chip) => chip)}
+                  image={require("views/images/portfolio.png")}
+                  content="A simple Rails API to exemplify how to architect the consumption of a third-party API."
+                  fullContent="Check out the source code for the highlights"
+                  buttons={
+                    [<Tooltip title="Source code">
+                    <IconButton 
+                      aria-label="source coude" 
+                      onClick={() => window.open("https://github.com/mmaya/books_api", "_blank")}
+                      color="secondary"
+                      size="medium">
+                      <GitHubIcon />
+                    </IconButton></Tooltip>,
+                    <Tooltip title="Preview"><IconButton 
+                      aria-label="preview" 
+                      onClick={() => window.open("https://mmaya-books-api.herokuapp.com", "_blank")}
+                      color="secondary"
+                      size="medium">
+                      <FindInPageIcon />
+                    </IconButton></Tooltip>]
                   }/>
               </Grid>
           </Grid>
