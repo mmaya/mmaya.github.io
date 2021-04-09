@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
-import { Link } from 'react-router-dom'
 import Tooltip from '@material-ui/core/Tooltip';
 //Icons
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -78,13 +77,6 @@ export default function ProjectsPage({...props}) {
                         color="secondary"
                         size="medium">
                         <GitHubIcon />
-                      </IconButton></Tooltip>,
-                      <Tooltip title="Preview"><IconButton 
-                        aria-label="preview" 
-                        component={Link} to="/my-portfolio"
-                        color="secondary"
-                        size="medium">
-                        <FindInPageIcon />
                       </IconButton></Tooltip>]
                   }/>
               </Grid>
