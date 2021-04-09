@@ -103,7 +103,7 @@ export default function ProjectsPage({...props}) {
                             label="AWS S3"
                             className={classes.chip}
                           />].map((chip) => chip)}
-                  image={require("views/images/portfolio.png")}
+                  image={require("views/images/books-api-project.jpeg")}
                   content="A simple Rails API to exemplify how to architect the consumption of a third-party API."
                   fullContent="Check out the source code for the highlights"
                   buttons={
