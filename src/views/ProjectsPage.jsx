@@ -1,17 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
-import Tooltip from '@material-ui/core/Tooltip';
 //Icons
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
 //Components
 import Card from 'components/ImageCard/ImageCard';
-
-
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,31 +50,35 @@ export default function ProjectsPage({...props}) {
                       <Chip
                         label="React"
                         className={classes.chip}
+                        key="chip-react-1"
                       />,
                       <Chip
                         label="React Hooks"
                         className={classes.chip}
+                        key="chip-hooks-1"
                       />,
                       <Chip
                         label="CSS"
                         className={classes.chip}
+                        key="chip-css-1"
                       />,
                       <Chip
                         label="UX"
                         className={classes.chip}
+                        key="chip-ux-1"
                       />].map((chip) => chip)}
                   image={require("views/images/portfolio-project.png")}
                   content="Well-organized single page project, developed with React Hooks, hosted on GitHub Pages."
                   fullContent="Check out the source code for the highlights"
                   buttons={
-                    [<Tooltip title="Source code">
-                      <IconButton 
-                        aria-label="source coude" 
-                        onClick={() => window.open("https://github.com/mmaya/my-portfolio", "_blank")}
-                        color="secondary"
-                        size="medium">
-                        <GitHubIcon />
-                      </IconButton></Tooltip>]
+                    [<Button
+                      variant="contained"
+                      color="secondary"
+                      key="source-button-2"
+                      className={classes.button}
+                      startIcon={<GitHubIcon />}
+                      onClick={() => window.open("https://github.com/mmaya/my-portfolio", "_blank")}
+                    >Source code</Button>]
                   }/>
               </Grid>
               <Grid item>
@@ -86,34 +87,38 @@ export default function ProjectsPage({...props}) {
                   subtitle={[<Chip
                               label="Ruby on Rails"
                               className={classes.chip}
+                              key="chip-rails-2"
                             />,
                             <Chip
                               label="API"
                               className={classes.chip}
+                              key="chip-api-2"
                             />,
                             <Chip
                             label="AWS S3"
+                            key="chip-aws-2"
                             className={classes.chip}
                           />].map((chip) => chip)}
                   image={require("views/images/books-api-project.jpeg")}
                   content="A simple Rails API to exemplify how to architect the consumption of a third-party API."
                   fullContent="Check out the source code for the highlights"
                   buttons={
-                    [<Tooltip title="Source code">
-                    <IconButton 
-                      aria-label="source coude" 
+                    [<Button
+                      variant="contained"
+                      color="secondary"
+                      key="source-button-2"
+                      className={classes.button}
+                      startIcon={<GitHubIcon />}
                       onClick={() => window.open("https://github.com/mmaya/books_api", "_blank")}
+                    >Source code</Button>,
+                    <Button
+                      variant="contained"
                       color="secondary"
-                      size="medium">
-                      <GitHubIcon />
-                    </IconButton></Tooltip>,
-                    <Tooltip title="Preview"><IconButton 
-                      aria-label="preview" 
+                      key="preview-button-2"
+                      className={classes.button}
+                      startIcon={<FindInPageIcon />}
                       onClick={() => window.open("https://mmaya-books-api.herokuapp.com", "_blank")}
-                      color="secondary"
-                      size="medium">
-                      <FindInPageIcon />
-                    </IconButton></Tooltip>]
+                    >Preview</Button>]
                   }/>
               </Grid>
           </Grid>
