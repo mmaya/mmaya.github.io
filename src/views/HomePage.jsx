@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 
   },
   container: {
-    zIndex: "1100",
+    zIndex: theme.zIndex.drawer,
     width: "100%",
     paddingLeft: theme.spacing(5),
     fontFamily: 'Ubuntu, Arial',

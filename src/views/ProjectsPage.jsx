@@ -40,9 +40,8 @@ export default function ProjectsPage({...props}) {
     <div className={classes.root}>
       <div className={classes.content}>
       <Typography variant="h3" component="h1" align="center">Projects</Typography>
-      <Grid container className={classes.goup} spacing={2}>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={2}>
+
+          <Grid container justify="center" className={classes.goup} spacing={2} xs={12}>
               <Grid item>
                 <Card
                   title="This portfolio"
@@ -122,8 +121,6 @@ export default function ProjectsPage({...props}) {
                   }/>
               </Grid>
           </Grid>
-        </Grid>
-      </Grid>
       </div>
     </div>
   );

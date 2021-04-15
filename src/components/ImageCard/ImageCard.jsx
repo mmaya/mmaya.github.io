@@ -14,14 +14,14 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     maxWidth: 345,
     marginTop: theme.spacing(1),
-    maxHeight: "calc(100vw * (6/14))",
+    minHeight: "calc(100vw * (6/14))",
     [theme.breakpoints.up('sm')]: {
       marginTop: theme.spacing(5),
     },
     cursor: 'pointer'
   },
   backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
+    zIndex: theme.zIndex.appBar,
     width: '100%',
     background: 'rgba(0, 0, 0, 0.2)',
     position: 'absolute',

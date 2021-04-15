@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   fabButton: {
     position: 'absolute',
-    zIndex: 1,
+    zIndex: theme.zIndex.drawer,
     bottom: theme.spacing(3),
     right: theme.spacing(4),
   },

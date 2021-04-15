@@ -9,10 +9,10 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:"#fff",
-    minHeight: "calc(100vw * (6/14))",
-    padding: theme.spacing(5, 2, 15, 2),
+    minHeight: "calc(100vw * (6/12))",
+    padding: theme.spacing(15, 2, 32, 2),
     [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(20),
+      paddingTop: theme.spacing(40),
     },
   }
 }));
