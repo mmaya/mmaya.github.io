@@ -9,26 +9,23 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-
-
-
 const useStyles = makeStyles(theme => ({
   root: {
-    position: 'block',
-    paddingTop: theme.spacing(1),
-    maxHeight: "calc(100vw * (6/14))",
+    position: 'relative',
     maxWidth: 345,
+    marginTop: theme.spacing(1),
+    maxHeight: "calc(100vw * (6/14))",
     [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(5),
+      marginTop: theme.spacing(5),
     },
     cursor: 'pointer'
   },
   backdrop: {
-    position: 'relative',
     zIndex: theme.zIndex.drawer + 1,
     width: '100%',
     background: 'rgba(0, 0, 0, 0.2)',
-    marginTop: '-119%',
+    position: 'absolute',
+    top: 0,
     textAlign: 'center',
   },
   media: {
@@ -41,22 +38,8 @@ const useStyles = makeStyles(theme => ({
       zIndex: theme.zIndex.drawer + 1,
       marginTop: '56.25%',
     }
-  },
-  expand: {
-    maxWidth: 345,
-  },
-  expandOpen: {
-    backgroundColor: '#000000',
-    opacity: 0.5,
-    transform: 'scaleY(1)',
-    overflow: 'hidden',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.complex,
-    }),
   }
 }));
-
-
 
 export default function ImageCard({...props}) {
   const classes = useStyles();
