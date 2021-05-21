@@ -41,7 +41,7 @@ export default function ProjectsPage({...props}) {
       <div className={classes.content}>
       <Typography variant="h3" component="h1" align="center">Projects</Typography>
 
-          <Grid container justify="center" className={classes.goup} spacing={2} xs={12}>
+          <Grid container justify="center" className={classes.goup} spacing={2}>
               <Grid item>
                 <Card
                   title="This portfolio"
@@ -68,7 +68,6 @@ export default function ProjectsPage({...props}) {
                       />].map((chip) => chip)}
                   image={require("views/images/portfolio-project.png")}
                   content="Well-organized single page project, developed with React Hooks, hosted on GitHub Pages."
-                  fullContent="Check out the source code for the highlights"
                   buttons={
                     [<Button
                       variant="contained"
@@ -100,7 +99,6 @@ export default function ProjectsPage({...props}) {
                           />].map((chip) => chip)}
                   image={require("views/images/books-api-project.jpeg")}
                   content="A simple Rails API to exemplify how to architect the consumption of a third-party API."
-                  fullContent="Check out the source code for the highlights"
                   buttons={
                     [<Button
                       variant="contained"

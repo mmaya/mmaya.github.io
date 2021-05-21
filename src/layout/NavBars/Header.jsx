@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header({ ...props }) {
   const classes = useStyles();
+  const {navLinks} = props;
 
   function ElevationScroll(props) {
     const { children } = props;
@@ -42,12 +43,12 @@ export default function Header({ ...props }) {
   
   return (
       <ElevationScroll {...props}>
-      <AppBar className={classes.appBar}>
+      <AppBar className={classes.appBar} id="webNavBar">
         <Toolbar>
               <Button
                 color="inherit"
                 className={classes.button}
-                component={Link} to="/my-portfolio"
+                component={Link} to={navLinks.home}
                 startIcon={<HomeRoundedIcon />}
               >
                 HomePage
@@ -55,7 +56,7 @@ export default function Header({ ...props }) {
               <Button
                 color="inherit"
                 className={classes.button}
-                component={Link} to={{pathname: "/my-portfolio", hash: "#projects", scroll: "smoth"}}
+                component={Link} to={navLinks.projects}
                 startIcon={<MenuBookIcon />}
               >
                 Projects
@@ -63,7 +64,7 @@ export default function Header({ ...props }) {
               <Button
                 color="inherit"
                 className={classes.button}
-                component={Link} to={{pathname: "/my-portfolio", hash: "#about", scroll: "smoth"}}
+                component={Link} to={navLinks.about}
                 startIcon={<AccountCircle />}
               >
                 About
@@ -71,7 +72,7 @@ export default function Header({ ...props }) {
               <Button
                 color="inherit"
                 className={classes.button}
-                component={Link} to={{pathname: "/my-portfolio", hash: "#contact", scroll: "smoth"}}
+                component={Link} to={navLinks.contact}
                 startIcon={<MailIcon />}
               >
                 Contact

@@ -24,33 +24,34 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function BottomNav() {
+export default function Bottom({ ...props }) {
   const classes = useStyles();
+  const {navLinks} = props;
 
   return (
-  <div className={classes.sectionMobile}>
+  <div className={classes.sectionMobile} id="mobileNavBar">
    <AppBar position="fixed" color="primary" className={classes.appBar} >
         <Toolbar >
             <Button
               color="inherit"
-              component={Link} to="/my-portfolio"
+              component={Link} to={navLinks.home}
             >
               HomePage
             </Button>
             <Button
               color="inherit"
-              component={Link} to={{pathname: "/my-portfolio", hash: "#projects", scroll: "smoth"}}
+              component={Link} to={navLinks.projects}
             >
               Projects
             </Button> 
             <Button
               color="inherit"
-              component={Link} to={{pathname: "/my-portfolio", hash: "#about", scroll: "smoth"}}
+              component={Link} to={navLinks.about}
             >
               About
             </Button> 
             <div className={classes.grow} />
-            <Fab color="secondary" aria-label="add" className={classes.fabButton} component={Link} to={{pathname: "/my-portfolio", hash: "#contact", scroll: "smoth"}}>
+            <Fab color="secondary" aria-label="add" className={classes.fabButton} component={Link} to={navLinks.contact}>
               <MailIcon />
             </Fab>
             <div className={classes.grow} />

@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
 import { useLocation } from "react-router-dom";
 //Components
-import Parallax from 'components/Parallax';
+import CoverImage from 'components/CoverImage/CoverImage';
 import AboutPage from 'views/AboutPage';
 import ProjectsPage from 'views/ProjectsPage';
 import ContactPage from 'views/ContactPage';
@@ -100,7 +100,6 @@ function HomePage() {
   const projects = React.createRef();
   const contact = React.createRef();
 
-
   window.addEventListener("load", (event) => {
     createObserver(sections.current);
   }, false);
@@ -159,7 +158,7 @@ function HomePage() {
 
     return (
       <div className={classes.root} id="root">
-        <Parallax image={require("views/images/portfolio.png")} >
+        <CoverImage image={require("views/images/portfolio.png")} >
           <Slide direction="right" in={true}  timeout={1500} mountOnEnter>
               <div className={classes.container} >
                     <div className={classes.homeTitle}>Milleni Maya</div>
@@ -173,7 +172,7 @@ function HomePage() {
                   component={Link} to={{pathname: "/my-portfolio", hash: "#projects", scroll: "smoth"}}>view more</Button>
               </div>
           </Slide>
-        </Parallax>
+        </CoverImage>
         <div ref={sections}>
           <div ref={about} className={classes.sections}><AboutPage trigger={trigger} /></div>
           <div ref={projects} className={classes.sections}> <ProjectsPage /></div>

@@ -2,7 +2,7 @@ import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const parallaxStyle = theme => ({
+const useStyles = theme => ({
     children:{
       margin: "-10vh 0 0 0",
       width: "100%",
@@ -10,7 +10,7 @@ const parallaxStyle = theme => ({
          margin: "-30vh 0 0 0",
       },
     },
-    parallax: {
+    image: {
       height: "100vh",
       overflow: "hidden",
       position: "relative",
@@ -24,7 +24,7 @@ const parallaxStyle = theme => ({
     }
   });
 
-export class Parallax extends React.Component {
+export class CoverImage extends React.Component {
   
   render() {
     const {
@@ -37,13 +37,13 @@ export class Parallax extends React.Component {
     return (
       
       <div
-        className={classes.parallax}
+        className={classes.image}
         style={{
           backgroundImage: "url(" + image + ")",
         }}
-        ref="parallax"
+        id="image"
       >
-        <div className={classes.children}>
+        <div className={classes.children} id="children">
           {children}
         </div>
       </div>
@@ -52,4 +52,4 @@ export class Parallax extends React.Component {
   }
 }
 
-export default withStyles(parallaxStyle)(Parallax);
+export default withStyles(useStyles)(CoverImage);

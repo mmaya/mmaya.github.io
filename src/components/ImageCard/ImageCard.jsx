@@ -44,14 +44,14 @@ const useStyles = makeStyles(theme => ({
 export default function ImageCard({...props}) {
   const classes = useStyles();
   const { title, subtitle, content, buttons, image, imageTitle} = props;
+  
+  //Card button backdrop
   const [expanded, setExpanded] = React.useState(false);
   const ref = React.useRef()
   const [height, setHeight] = React.useState(0)
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };  
-
   React.useEffect(() => {
     setHeight(ref.current.clientHeight)
   },[])
@@ -65,11 +65,13 @@ export default function ImageCard({...props}) {
           <CardHeader
             title={title}
             subheader={subtitle}
+            aria-label="card-header"
           />
           <CardMedia
             className={classes.media}
             image={image}
             title={imageTitle}
+            aria-label="card-media"
           />
           <CardContent>
             <Typography variant="body2" color="textSecondary" component="p" align="justify">
@@ -81,7 +83,7 @@ export default function ImageCard({...props}) {
       <Grow in={expanded} mountOnEnter>
         <Paper className={classes.backdrop} elevation={0} style={{height: height}}>
           <Box className={classes.button}>
-            {buttons.map((button) => (
+            {buttons && buttons.map((button) => (
                   button
                 ))}
           </Box>
