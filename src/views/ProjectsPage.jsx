@@ -42,6 +42,41 @@ export default function ProjectsPage({...props}) {
       <Typography variant="h3" component="h1" align="center">Projects</Typography>
 
           <Grid container justify="center" className={classes.goup} spacing={2}>
+          <Grid item>
+                <Card
+                  title="Startup MVP"
+                  subtitle={[<Chip
+                    label="Ruby on Rails"
+                    className={classes.chip}
+                    key="chip-rails-3"
+                    />,
+                    <Chip
+                      label="API"
+                      className={classes.chip}
+                      key="chip-api-2"
+                    />,
+                    <Chip
+                    label="AWS S3"
+                    key="chip-aws-3"
+                    className={classes.chip}
+                    />, <Chip
+                    label="React"
+                    className={classes.chip}
+                    key="chip-react-2"
+                  />].map((chip) => chip)}
+                  image={require("views/images/you-cook-project.png")}
+                  content="MVP project for a startup. Rails API + React app deployed on Heroku integrated with Github."
+                  buttons={
+                    [<Button
+                      variant="contained"
+                      color="secondary"
+                      key="preview-button-2"
+                      className={classes.button}
+                      startIcon={<FindInPageIcon />}
+                      onClick={() => window.open("https://www.youcook.club", "_blank")}
+                    >Preview</Button>]
+                  }/>
+              </Grid>
               <Grid item>
                 <Card
                   title="This portfolio"
@@ -115,6 +150,45 @@ export default function ProjectsPage({...props}) {
                       className={classes.button}
                       startIcon={<FindInPageIcon />}
                       onClick={() => window.open("https://mmaya-books-api.herokuapp.com", "_blank")}
+                    >Preview</Button>]
+                  }/>
+              </Grid>
+              <Grid item>
+                <Card
+                  title="Ruby on Rails Monolithic"
+                  subtitle={[<Chip
+                              label="Ruby on Rails"
+                              className={classes.chip}
+                              key="chip-rails-4"
+                            />,
+                            <Chip
+                              label="Monolithic"
+                              className={classes.chip}
+                              key="chip-monolithic"
+                            />,
+                            <Chip
+                          label="Javascript"
+                          className={classes.chip}
+                          key="chip-javascript"
+                        />].map((chip) => chip)}
+                  image={require("views/images/calendar-project.png")}
+                  content="Monolithic calendar application, using Ruby on Rails and Javascript, with a single month view."
+                  buttons={
+                    [<Button
+                      variant="contained"
+                      color="secondary"
+                      key="source-button-2"
+                      className={classes.button}
+                      startIcon={<GitHubIcon />}
+                      onClick={() => window.open("https://github.com/mmaya/rails-simple-calendar", "_blank")}
+                    >Source code</Button>,
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      key="preview-button-2"
+                      className={classes.button}
+                      startIcon={<FindInPageIcon />}
+                      onClick={() => window.open("https://interview-milleni-maya.herokuapp.com/", "_blank")}
                     >Preview</Button>]
                   }/>
               </Grid>
