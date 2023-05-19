@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "44f860735addc7e5108921e2f79ef354",
+    "revision": "96ff546e88d13036737a9b05f9be3368",
     "url": "/my-portfolio/index.html"
   },
   {
-    "revision": "d243f8f42bf5779b32d4",
+    "revision": "5fa052593d7149b70c7d",
     "url": "/my-portfolio/static/css/2.4bfc5d82.chunk.css"
   },
   {
-    "revision": "d243f8f42bf5779b32d4",
-    "url": "/my-portfolio/static/js/2.f2bf6abc.chunk.js"
+    "revision": "5fa052593d7149b70c7d",
+    "url": "/my-portfolio/static/js/2.058498f1.chunk.js"
   },
   {
     "revision": "89a1b2dcd30c03705b2bceeb141b76b6",
-    "url": "/my-portfolio/static/js/2.f2bf6abc.chunk.js.LICENSE.txt"
+    "url": "/my-portfolio/static/js/2.058498f1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1ee402850bd222a6cb22",
-    "url": "/my-portfolio/static/js/main.a6cfc769.chunk.js"
+    "revision": "9d30ec4b395dab09f354",
+    "url": "/my-portfolio/static/js/main.074b462b.chunk.js"
   },
   {
-    "revision": "f241adf7bba56ceeeb82",
-    "url": "/my-portfolio/static/js/runtime-main.8b00eace.js"
+    "revision": "f8bc21605bac90413ed8",
+    "url": "/my-portfolio/static/js/runtime-main.cc7e5888.js"
   },
   {
     "revision": "789374a0fd47d3fb15483177407bc75f",
@@ -82,10 +82,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "597180323bed45829b6b7c6ed280368a",
     "url": "/my-portfolio/static/media/books-api-project.59718032.jpeg"
-  },
-  {
-    "revision": "5e0b78cc2d4475853e9e54eac1f51bc6",
-    "url": "/my-portfolio/static/media/calendar-project.5e0b78cc.png"
   },
   {
     "revision": "33802f1e7390b174f0cdff33c6e00009",
@@ -162,9 +158,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c02fdf8544ee71a10050b800f1c146b1",
     "url": "/my-portfolio/static/media/ubuntu-latin-700italic.c02fdf85.woff2"
-  },
-  {
-    "revision": "cb2505f0e2a268e53f12577cc71e2fbe",
-    "url": "/my-portfolio/static/media/you-cook-project.cb2505f0.png"
   }
 ]);
